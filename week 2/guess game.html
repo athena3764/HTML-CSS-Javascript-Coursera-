@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Guessing Game</title>
+</head>
+<body>
+<script>
+var color = ['aqua', 'red', 'black', 'cyan', 'pink', 'blue', 'green'];
+var guess_input;
+var target;
+var finished = false;
+var count = 0;
+
+function check_guess(guess_input) {
+  if (color.indexOf(guess_input) == -1) {
+    alert("Sorry, I don't recognize your color.\n\n" + "Please try again.");
+  } else if (guess_input > target) {
+    alert("Sorry, your guess is not correct!\n\n" + "Your color is alphabetically higher than mine.");
+  } else if (guess_input < target) {
+    alert("Sorry, your guess is not correct!\n\n" + "Your color is alphabetically lower than mine.")
+  } else {
+    var body_color = document.getElementsByTagName('body')[0];
+    body_color.style.background = target;
+    alert("Congratulations, you've guessed the color! The total number of guesses is " + count);
+    finished = true;
+  }
+}
+
+function do_game() {
+  var arr_length = color.length;
+  var random_number = Math.floor(Math.random() * arr_length);
+  target = color[random_number];
+  while (finished == false) {
+    guess_input = prompt("Can you guess which one of these colors I am thinking?\n\n" + color);
+    check_guess(guess_input.toLowerCase());
+    count += 1;
+  }
+}
+do_game();
+</script>
+</body>
+</html>

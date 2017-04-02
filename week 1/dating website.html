@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A Dating Website</title>
+
+<link href="mystyles.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <h1>Please Enter Your Details For Our Dating Website!</h1>
+    <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Your Face</legend>
+      <label for="image">Your Image:</label>
+      <input type="file" id="image" name="image" required><input type="button" id="delete", value="Delete Image"><br>
+      <label for="preview">Image Preview:</label> <img src="" id="preview" name="preview">
+    </fieldset>
+
+    <fieldset>
+      <legend>Your General Details</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+      <br>
+      <span>Gender:</span>
+    <input type="radio" id="gender" name="gender" value="male" required><label for="gender">Male</label>
+      <input type="radio" id="gender" name="gender" value="female" required><label for="gender">Female</label>
+      <br>
+      <label for="age">Age:</label>
+      <input type="number" min="18" max="99" step="1" value="18" id="age" name="age" required>
+      <br>
+      <label for="birth">Date of Birth:</label>
+      <input type="date" id="birth" name="birth">
+      <br>
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color">
+      <br>
+      <label for="country">Which country:</label>
+      <select id="country" name="country">
+        <option value="">No Selection</option>
+        <option value="usa">USA</option>
+        <option value="canada">Canada</option>
+        <option value="china">China</option>
+        <option value="india">India</option>
+        <option value="japan">Japan</option>
+
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Your Indicators</legend>
+      <label for="height">Height:</label> <span class="range1">Short</span>
+      <input type="range" min="0" max="100" step="5" id="height" name="height"> <span class="range2">Tall</span>
+      <br>
+      <label for="salary">Salary:</label> <span class="range1">Poor </span>
+      <input type="range" min="0" max="100" step="5" id="salary" name="salary"> <span class="range2">Rich</span>
+	  </fieldset>
+    <fieldset>
+      <legend>Your Contact Information</legend>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter Your Email">
+      <br>
+      <label for="phone"> Mobile: </label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter Your Number">
+      <br>
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" placeholder="Enter Your Address"></textarea>
+      <br>
+      <span>Method to contact you:</span>
+      <input type="checkbox" id="e-mail" name="e-mail" value="e-mail"><label for="e-mail">Email</label>
+      <input type="checkbox" id="whatsapp" name="whatsapp" value="whatsapp"><label for="whatsapp">Whatsapp</label>
+      <input type="checkbox"id="chat" name="chat" value="chat"><label for="chat">In-app chat</label></fieldset>
+    <input type="submit" value="Submit">
+
+  </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+  
+  $('#image').change(
+  function(event){
+  
+  $('#preview').attr('src', URL.createObjectURL(event.target.files[0]));
+  
+  });
+  
+  $('#delete').click(
+  
+  function(){
+  
+    $('#image').val('');
+  
+  $('#preview').attr('src','');
+  
+  
+  });
+
+  });
+  
+  </script>
+</body>
+<html>

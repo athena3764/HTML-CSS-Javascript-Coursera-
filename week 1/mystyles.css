@@ -1,0 +1,89 @@
+body {
+	background-color: #FFF5EE;
+}
+h1 {
+	color: #ff3399;
+	font-family: "Palatino Linotype", Arial;
+	font-weight: bold;
+}
+fieldset {
+	background-color: white;
+	border: solid 5px #ff3399;
+	margin-bottom: 10px;
+	width: 720px;
+}
+#delete {
+ 
+	background-color: white;
+}
+#delete:hover {
+	cursor: pointer;
+	box-shadow: 3px 3px 5px #888888;
+}
+legend {
+	font-family: "Palatino Linotype", Arial;
+	font-size: 20px;
+	font-weight: bold;
+}
+label[for=gender], label[for=e-mail], label[for=whatsapp], label[for=chat] {
+	width: auto;
+}
+.range1 {
+	color: white;
+	background-color: darkred;
+	padding: 2px;
+	width: 70px;
+	text-align: center;
+}
+.range2 {
+	color: white;
+	background-color: purple;
+	padding: 2px;
+	width: 70px;
+	text-align: center;
+}
+span,label {
+	font-family: Palatino Linotype;
+	width: 180px;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+}
+input[type=range] {
+	-webkit-appearance: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+	width: 300px;
+	height: 4px;
+	background: #ddd;
+	border: none;
+	border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: solid gray 1px;
+	height: 15px;
+	width: 10px;
+	border-radius: 30%;
+	background: white;
+	margin-top: -4px;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+	background: #ddd;
+}
+input[type=range]:focus {
+	outline: none;
+}
+label:hover {
+	color: #ff3399;
+}
+#age {
+	width: 50px;
+}
+textarea {
+	width: 360px;
+	height: 50px;
+}
+div {
+	padding: 5px;
+}
